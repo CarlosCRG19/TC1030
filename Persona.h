@@ -6,15 +6,15 @@ using namespace std;
 
 class Persona{
     protected: 
-        string Nombre;
-        string Direccion;
-        int Telefono;
-        string FechaNac;
-        char Sexo;
+        string nombre;
+        string direccion;
+        string telefono;
+        string fechaNac;
+        char sexo;
 
     public:
         Persona();
-        Persona(string, string, int , string, char);
+        Persona(string, string, string , string, char);
         virtual void print()=0;
 };
 

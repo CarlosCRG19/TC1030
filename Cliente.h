@@ -10,10 +10,9 @@ class Cliente: public Persona {
     
     public:
         Cliente();
-        Cliente(string,string,int,string,char,string);
+        Cliente(string,string,string,string,char,string);
         void borrarCliente(int);
         virtual void print();
-
 };
 
 #endif

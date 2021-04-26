@@ -6,12 +6,12 @@ using namespace std;
 
 class Empleado: public Persona {
     private:
-        string Cargo;
+        string cargo;
     
     public:
         Empleado();
-        Empleado(string,string,int,string,char,string);
-        void borrarEmpleado(int);
+        Empleado(string,string,string,string,char,string);
+        void borrarEmpleado();
         virtual void print();
 
 };

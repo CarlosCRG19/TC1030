@@ -3,15 +3,24 @@
 using namespace std;
 
 Empleado::Empleado(){
-    Cargo = "";
+    cargo = "NULL";
 }
 
-Empleado::Empleado(string _Nombre, string _Direccion, int _Telefono, string _FechaNac, char _Sexo, string _Cargo)
+Empleado::Empleado(string _Nombre, string _Direccion,string _Telefono, string _FechaNac, char _Sexo, string _Cargo)
                     :Persona (_Nombre, _Direccion, _Telefono, _FechaNac, _Sexo){
-    Cargo = _Cargo;
+    cargo = _Cargo;
 
 }
 
 void Empleado::print(){
-    cout << Nombre << Direccion << Telefono << FechaNac << Sexo << Cargo <<endl;
+    cout << nombre<<" " << direccion<<" " << telefono<<" " << fechaNac<<" " << sexo<<" " << cargo <<endl;
+}
+
+void Empleado::borrarEmpleado(){
+    nombre="NULL";
+    direccion="NULL";
+    telefono="NULL";
+    fechaNac="NULL";
+    sexo='X';
+    cargo="NULL";
 }

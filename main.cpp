@@ -36,16 +36,15 @@ Producto * crearInventario(){
 }
 
 int main() {
-    
     Producto *inventario=crearInventario();
-    Cliente cliente1("Luis David", "Const 5", 3411358179, "24/01/2002", 'M', "Lomlo");
-    Cliente cliente2("Brandon Josue", "Pipila 8", 341345446, "12/08/2002", 'M', "LMLM");
-    Empleado empleado1("Luis David", "Const 5", 3411358179, "24/01/2002", 'M', "CEO");
-    Empleado empleado2("Brandon Josue", "Pipila 8", 341345446, "12/08/2002", 'M', "MVP");
+    Cliente cliente1("Luis David", "Const 5", "3411358179", "24/01/2002", 'M', "Lomlo");
+    Cliente cliente2("Brandon Josue", "Pipila 8", "341345446", "12/08/2002", 'M', "LMLM");
+    Empleado empleado1("Luis David", "Const 5", "3411358179", "24/01/2002", 'M', "CEO");
+    Empleado empleado2("Brandon Josue", "Pipila 8", "341345446", "12/08/2002", 'M', "MVP");
     Empleado empleados[2] = {empleado1, empleado2};
     Cliente clientes[2] = {cliente1, cliente2};
     Sucursal casaRuiz(1, 2, 2, inventario, empleados, clientes);
-    for(int i=0; i<20; i++){
-        inventario[i].print();
-    }
+    casaRuiz.empleados[1].borrarEmpleado();
+    casaRuiz.empleados[0].print();
+    casaRuiz.empleados[1].print();
 }

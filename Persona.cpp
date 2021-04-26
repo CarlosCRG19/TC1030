@@ -1,22 +1,18 @@
 #include "Persona.h"
 
 Persona::Persona(){
-    Nombre = "";
-    Direccion = "";
-    Telefono = 0;
-    FechaNac = "";
-    Sexo = ' ';
+    nombre = "NULL";
+    direccion = "NULL";
+    telefono = "NULL";
+    fechaNac = "NULL";
+    sexo = 'X';
 }
 
-Persona::Persona(string _Nombre, string _Direccion, int _Telefono, string _FechaNac, char _Sexo){
-    Nombre = _Nombre;
-    Direccion = _Direccion;
-    Telefono = _Telefono;
-    FechaNac = _FechaNac;
-    Sexo = _Sexo;
+Persona::Persona(string _Nombre, string _Direccion, string _Telefono, string _FechaNac, char _Sexo){
+    nombre = _Nombre;
+    direccion = _Direccion;
+    telefono = _Telefono;
+    fechaNac = _FechaNac;
+    sexo = _Sexo;
 }
-
-void Persona::print(){
-    cout<<"33"<<endl;
-} 
 
