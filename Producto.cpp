@@ -1,23 +1,27 @@
 #include "Producto.h"
 
 Producto::Producto(){
-    Codigo = "";
-    Nombre = "";
-    Precio = 0.0;
-    Cantidad = 0;
-    Peso = 0.0;
-    Size = 0.0;
+    codigo = "";
+    nombre = "";
+    precio = 0.0;
+    cantidad = 0;
+    peso = 0.0;
+    size = 0.0;
 }
 
-Producto::Producto(string _Codigo, string _Nombre, double _Precio, int _Cantidad, double _Peso, double _Size){
-    Codigo = _Codigo;
-    Nombre = _Nombre;
-    Precio = _Precio;
-    Cantidad = _Cantidad;
-    Peso = _Peso;
-    Size = _Size;
+Producto::Producto(string _Codigo, string _Nombre, float _Precio, int _Cantidad, float _Peso, float _Size){
+    codigo = _Codigo;
+    nombre = _Nombre;
+    precio = _Precio;
+    cantidad = _Cantidad;
+    peso = _Peso;
+    size = _Size;
 }
 
 void Producto::print(){
-    cout << Codigo << Nombre << Precio << Cantidad << Peso << Size << endl;
+    cout << codigo <<" "<<nombre<<" " << precio<<" " << cantidad<<" " << peso<<" " << size << endl;
+}
+
+string Producto::getNombre(){
+    return nombre;
 }

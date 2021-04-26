@@ -5,19 +5,20 @@ using namespace std;
 
 class Producto{
     private:
-        string Codigo;
-        string Nombre;
-        double Precio;
-        int Cantidad;
-        double Peso;
-        double Size;
+        string codigo;
+        string nombre;
+        float precio;
+        int cantidad;
+        float peso;
+        float size;
 
     public:
         Producto();
-        Producto(string,string,double,int,double,double);
+        Producto(string,string,float,int,float,float);
         void borrarProd(string);
         void inventario(int);
         void print();
+        string getNombre();
 };
 
 #endif

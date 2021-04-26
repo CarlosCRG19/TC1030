@@ -1,0 +1,20 @@
+A1,Aceite 1L,35.5,0,1.0,1000.0
+A2,Azucar 1Kg,22.0,0,1.0,1000
+A3,Huevos(12pz),40.0,0,0.36,200
+A4,Pan Bimbo,35.5,0,.25,2000
+A5,Chookis,45.0,0,0.06,1000
+A6,Zucaritas,48.0,0,0.54,1000
+A7,Leche,22.0,0,1.0,1000
+A8,Coca-Cola,34.0,0,1.0,1000
+A9,Sabritas,46.0,0,0.25,200
+A10,Jabon,32.0,0,0.1,100
+A11,Pasta de dientes,18.0,0,0.1,200
+A12,Yogur,25.0,0,1.0,1000
+A13,Sal,23.0,0,1.0,1000
+A14,Arroz,38.0,0,1.0,1000
+A15,Atun,45.0,0,0.14,200
+A16,Mayonesa,42.0,0,0.5,500
+A17,Jugo de Naranja,27.0,0,1.0,1000
+A18,Mermelada de Fresa,18.0,0,0.5,500
+A19,Mantequilla,18.0,0,0.25,250
+A20,Torillas de Harina,25.0,0,0.5,500
