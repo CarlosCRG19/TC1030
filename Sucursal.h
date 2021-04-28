@@ -13,13 +13,16 @@ class Sucursal {
         Sucursal(int, int, int);
         ~Sucursal();
         Empleado *empleados;
+        Cliente *clientes;
+        int getSizeEmpleados();
+
     private:
         int dimProductos;
         int dimEmpleados;
         int dimClientes;
 
         Producto *productos;
-        Cliente *clientes;
+        
 };
 
 #endif

@@ -19,6 +19,8 @@ class Producto{
         void inventario(int);
         void print();
         string getNombre();
+        void modificiarInfo(string, float);
+        void cambioCantidad(int);
 };
 
 #endif

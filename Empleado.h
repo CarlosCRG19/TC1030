@@ -13,6 +13,7 @@ class Empleado: public Persona {
         Empleado(string,string,string,string,char,string);
         void borrarEmpleado();
         virtual void print();
+        string getNombre();
 
 };
 

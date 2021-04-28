@@ -16,6 +16,10 @@ void Empleado::print(){
     cout << nombre<<" " << direccion<<" " << telefono<<" " << fechaNac<<" " << sexo<<" " << cargo <<endl;
 }
 
+string Empleado::getNombre(){
+    return nombre;
+}
+
 void Empleado::borrarEmpleado(){
     nombre="NULL";
     direccion="NULL";
@@ -23,4 +27,15 @@ void Empleado::borrarEmpleado(){
     fechaNac="NULL";
     sexo='X';
     cargo="NULL";
+
+    //Actualizar el puntero de empleados dentro de sucursal
+    //getsizeSucursal
+    //for(int i; i<size; i++){
+        //nombre = sucursal[i].getNombre()
+        //if (nombre == "NULL")
+        //int j = i
+        //for (j; j<size; j++)
+        //empleado[j] = empleado[j+1]
+        //cambiar dimension de empleados en sucursal
+    //}
 }

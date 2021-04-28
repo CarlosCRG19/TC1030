@@ -15,3 +15,11 @@ Cliente::Cliente(string _Nombre, string _Direccion, string _Telefono, string _Fe
 void Cliente::print(){
     cout << nombre <<" "<< direccion<<" " << telefono<<" " << fechaNac<<" " << sexo<<" " << RFC << endl;
 }
+
+void Cliente::modificarInfo(string dato, string cambio){
+    if (dato == "direccion"){
+        this->direccion = cambio;
+    }else if (dato == "telefono"){
+        this->telefono = cambio;
+    }
+}

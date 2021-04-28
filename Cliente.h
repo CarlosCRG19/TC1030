@@ -13,6 +13,7 @@ class Cliente: public Persona {
         Cliente(string,string,string,string,char,string);
         void borrarCliente(int);
         virtual void print();
+        void modificarInfo(string,string);
 };
 
 #endif

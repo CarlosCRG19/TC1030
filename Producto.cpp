@@ -25,3 +25,22 @@ void Producto::print(){
 string Producto::getNombre(){
     return nombre;
 }
+
+void Producto::borrarProd(string codigo){
+    codigo = "NULL";
+    nombre = "NULL";
+    precio = 0.0;
+    cantidad = 0;
+    peso = 0.0;
+    size = 0.0;
+}
+
+void Producto::modificiarInfo(string dato, float cambio){
+    if (dato == "precio"){
+        precio = cambio;
+    }else if (dato == "peso"){
+        peso = cambio;
+    }else if (dato == "peso"){
+        peso = cambio;
+    }
+}

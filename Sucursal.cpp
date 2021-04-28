@@ -32,3 +32,7 @@ Sucursal::Sucursal(int _dimProductos, int _dimEmpleados, int _dimCilentes, Produ
 
 Sucursal::~Sucursal() {
 }
+
+int Sucursal::getSizeEmpleados(){
+    return dimEmpleados;
+}
