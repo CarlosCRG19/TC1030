@@ -4,17 +4,16 @@
 #include <iostream>
 using namespace std;
 
-class Empleado: public Persona {
-    private:
-        string cargo;
-    
-    public:
-        Empleado();
-        Empleado(string,string,string,string,char,string);
-        void borrarEmpleado();
-        virtual void print();
-        string getNombre();
+class Empleado : public Persona
+{
+private:
+    string cargo;
 
+public:
+    Empleado();
+    Empleado(string, string, string, string, char, string);
+    virtual void print();
+    void modificarInfo(string, string);
 };
 
 #endif

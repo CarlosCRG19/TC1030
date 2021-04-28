@@ -4,16 +4,16 @@
 #include <iostream>
 using namespace std;
 
-class Cliente: public Persona {
-    private:
-        string RFC;
-    
-    public:
-        Cliente();
-        Cliente(string,string,string,string,char,string);
-        void borrarCliente(int);
-        virtual void print();
-        void modificarInfo(string,string);
+class Cliente : public Persona
+{
+private:
+    string RFC;
+
+public:
+    Cliente();
+    Cliente(string, string, string, string, char, string);
+    virtual void print();
+    void modificarInfo(string, string);
 };
 
 #endif
