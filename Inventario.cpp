@@ -48,7 +48,6 @@ void Inventario::agregarProducto(Producto new_prod){
         aux.productos[i]=productos[i];
     } 
     aux.productos[numProductos]=new_prod;
-    //aux.muestraProductos();
     productos=aux.productos;
     numProductos+=1;
 }
