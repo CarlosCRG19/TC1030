@@ -13,6 +13,8 @@ Empleado::Empleado(string _Nombre, string _Direccion, string _Telefono, string _
     cargo = _Cargo;
 }
 
+string Empleado::getCargo() { return cargo; }
+
 void Empleado::muestraAtributos()
 {
     cout << "\nAtributos del Empleado" << endl;

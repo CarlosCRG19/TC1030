@@ -91,3 +91,8 @@ void Producto::print()
     cout << "Producto -> "
          << "Código: " << codigo << "; Nombre: " << nombre << "; Precio: " << precio << "; Cantidad: " << cantidad << "; Peso: " << peso << "; Size: " << size << "." << endl;
 }
+
+void Producto::modificaCantidad(int _cantidadComprada)
+{
+    cantidad = cantidad - _cantidadComprada;
+}

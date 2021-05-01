@@ -15,6 +15,8 @@ Cliente::Cliente(string _Nombre, string _Direccion, string _Telefono, string _Fe
     RFC = _RFC;
 }
 
+string Cliente::getRFC() { return RFC; }
+
 void Cliente::muestraAtributos()
 {
     cout << "\nAtributos del Cliente" << endl;
