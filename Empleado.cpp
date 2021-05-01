@@ -70,3 +70,9 @@ void Empleado::modificarInfo(int atributo, char valor)
         break;
     }
 }
+
+void Empleado::print()
+{
+    cout << "Empleado -> "
+         << "Nombre: " << nombre << "; Dirección: " << direccion << "; Teléfono: " << telefono << "; Fecha Nacimiento: " << fechaNac << "; cargo: " << cargo << "." << endl;
+}

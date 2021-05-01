@@ -72,3 +72,9 @@ void Cliente::modificarInfo(int atributo, char valor)
         break;
     }
 }
+
+void Cliente::print()
+{
+    cout << "Empleado -> "
+         << "Nombre: " << nombre << "; Dirección: " << direccion << "; Teléfono: " << telefono << "; Fecha Nacimiento: " << fechaNac << "; RFC: " << RFC << "." << endl;
+}

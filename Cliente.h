@@ -13,10 +13,12 @@ public:
     Cliente();
     Cliente(string, string, string, string, char, string);
     // método para mostrar atributos
-    virtual void muestraAtributos();
+    void muestraAtributos();
     // método para modificar atributos
     void modificarInfo(int, string);
     void modificarInfo(int, char);
+    // método print
+    virtual void print();
 };
 
 #endif

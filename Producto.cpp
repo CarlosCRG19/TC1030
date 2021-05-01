@@ -20,6 +20,13 @@ Producto::Producto(string _Codigo, string _Nombre, float _Precio, int _Cantidad,
     size = _Size;
 }
 
+string Producto::getCodigo() { return codigo; }
+string Producto::getNombre() { return nombre; }
+float Producto::getPrecio() { return precio; }
+float Producto::getCantidad() { return cantidad; }
+float Producto::getPeso() { return peso; }
+float Producto::getSize() { return size; }
+
 void Producto::muestraAtributos()
 {
     cout << "\nAtributos del Producto" << endl;
@@ -82,4 +89,10 @@ void Producto::modificarInfo(int atributo, float valor)
         cout << "Lo sentimos, ese atributo no existe. Revisa que estés utilizando el índice y tipo de dato correcto" << endl;
         break;
     }
+}
+
+void Producto::print()
+{
+    cout << "Producto -> "
+         << "Código: " << codigo << "; Nombre: " << nombre << "; Precio: " << precio << "; Cantidad: " << cantidad << "; Peso: " << peso << "; Size: " << size << "." << endl;
 }

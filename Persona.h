@@ -29,7 +29,8 @@ public:
     void setFechaNac(string);
     void setSexo(char);
     // método para mostrar atributos
-    virtual void muestraAtributos() = 0;
+    void muestraAtributos();
+    virtual void print() = 0;
     // método para modificar atributos
     void modificarInfo(int, string);
     void modificarInfo(int, char);

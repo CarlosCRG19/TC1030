@@ -12,7 +12,8 @@ private:
 public:
     Empleado();
     Empleado(string, string, string, string, char, string);
-    virtual void muestraAtributos();
+    void muestraAtributos();
+    virtual void print();
     void modificarInfo(int, string);
     void modificarInfo(int, char);
 };
