@@ -9,36 +9,22 @@ Sucursal::Sucursal()
     inventario = new Producto[1];
 }
 
-<<<<<<< HEAD
-Sucursal::Sucursal(string _nombre, int _dimProductos, int _dimEmpleados)
-{
-    nombre = _nombre;
-=======
 Sucursal::Sucursal(int _dimProductos, int _dimEmpleados)
 {
     nombre = "";
->>>>>>> f82a6181734dc2f481a8193bd3c37e32357c7778
     numProductos = _dimProductos;
     numEmpleados = _dimEmpleados;
     empleados = new Empleado[_dimEmpleados];
     inventario = new Producto[_dimProductos];
 }
 
-<<<<<<< HEAD
-Sucursal::Sucursal(string _nombre, int _dimProductos, int _dimEmpleados, Producto *_productos, Empleado *_empleados)
-{
-    nombre = _nombre;
-=======
 Sucursal::Sucursal(int _dimProductos, int _dimEmpleados, Producto *_productos, Empleado *_empleados)
 {
     nombre = "";
->>>>>>> f82a6181734dc2f481a8193bd3c37e32357c7778
     numProductos = _dimProductos;
     numEmpleados = _dimEmpleados;
     empleados = _empleados;
     inventario = _productos;
-<<<<<<< HEAD
-=======
 }
 
 Sucursal::~Sucursal()
@@ -116,7 +102,6 @@ void Sucursal::eliminarProducto(int indice)
         }
         numProductos = numProductos - 1;
     }
->>>>>>> f82a6181734dc2f481a8193bd3c37e32357c7778
 }
 
 void Sucursal::muestraProductos()
@@ -131,15 +116,6 @@ void Sucursal::muestraProductos()
     cout << endl;
 }
 
-<<<<<<< HEAD
-int Sucursal::getSizeEmpleados(){
-    return dimEmpleados;
-}
-
-string Sucursal::getNombre() {
-    return nombre;
-}
-=======
 void Sucursal::modificarProducto(int producto, int atributo, string valor)
 {
     if (producto > numProductos)
@@ -256,4 +232,3 @@ int Sucursal::encuentraEmpleado(string nombre)
     }
     return -1;
 }
->>>>>>> f82a6181734dc2f481a8193bd3c37e32357c7778
