@@ -3,24 +3,35 @@
 #include <iostream>
 using namespace std;
 
-class Producto{
-    private:
-        string codigo;
-        string nombre;
-        float precio;
-        int cantidad;
-        float peso;
-        float size;
+class Producto
+{
+public:
+    string codigo;
+    string nombre;
+    float precio;
+    int cantidad;
+    float peso;
+    float size;
 
-    public:
-        Producto();
-        Producto(string,string,float,int,float,float);
-        void borrarProd(string);
-        void inventario(int);
-        void print();
-        string getNombre();
-        void modificiarInfo(string, float);
-        void cambioCantidad(int);
+    Producto();
+    Producto(string, string, float, int, float, float);
+    void inventario(int);
+    // getters
+    string getCodigo();
+    string getNombre();
+    float getPrecio();
+    float getCantidad();
+    float getPeso();
+    float getSize();
+    // métodos para mostar atributos
+    void muestraAtributos();
+    // métodos para modificar información
+    void modificarInfo(int, float);
+    void modificarInfo(int, string);
+    void cambioCantidad(int);
+    void modificaCantidad(int);
+    // método para imprimir datos del producto actual
+    void print();
 };
 
 #endif
