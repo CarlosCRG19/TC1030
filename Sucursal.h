@@ -15,7 +15,6 @@ public:
     int getSizeEmpleados();
     // Métodos
     void imprimirEmpleados(); // imprime los nombres de los empleados
-    int buscarEmpleado();     // regresa el índice donde se encuentra el empleado dentro del array
     void eliminarEmpleado();  // elimina empleado del array
     void agregarProducto(Producto);
     void eliminarProducto(int);
