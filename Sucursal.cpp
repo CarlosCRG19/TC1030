@@ -32,3 +32,5 @@ int Sucursal::getSizeEmpleados()
 {
     return dimEmpleados;
 }
+
+// Métodos
