@@ -18,6 +18,17 @@ Inventario::Inventario(int _numProductos, Producto *_productos)
     productos = _productos;
 }
 
+void Inventario::muestraProductos()
+{
+    cout << "\nLista de Productos" << endl;
+    cout << "------------------" << endl;
+    for (int i = 0; i < numProductos; i++)
+    {
+        cout << i << ".";
+        cout << productos[i].print() << endl;
+    }
+}
+
 void Inventario::borrarProducto(int indice)
 {
     if (indice < numProductos)
