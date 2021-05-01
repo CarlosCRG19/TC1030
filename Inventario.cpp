@@ -24,18 +24,29 @@ void Inventario::muestraProductos()
     cout << "------------------" << endl;
     for (int i = 0; i < numProductos; i++)
     {
-        cout << i << ".";
+        cout << i + 1 << ".";
         productos[i].print();
-        cout << endl;
     }
+    cout << endl;
+}
+
+void Inventario::agregarProducto(Producto nuevoProducto)
+{
+    Producto inventarioAuxiliar[numProductos + 1];
+    for (int i = 0; i < numProductos; i++)
+    {
+        inventarioAuxiliar[i] = productos[i];
+    }
+    inventarioAuxiliar[numProductos] = Producto(nuevoProducto.getCodigo(), nuevoProducto.getNombre(), nuevoProducto.getCantidad(), nuevoProducto.getPeso(), nuevoProducto.getSize(), nuevoProducto.getPrecio());
+    productos = inventarioAuxiliar;
+    numProductos = numProductos + 1;
 }
 
 void Inventario::borrarProducto(int indice)
 {
-    if (indice < numProductos)
+    if (indice - 1 < numProductos)
     {
-        numProductos = numProductos - 1;
-        for (int i = 0; i < numProductos; i++)
+        for (int i = indice - 1; i < numProductos; i++)
         {
             productos[i] = productos[i + 1];
         }
