@@ -27,31 +27,11 @@ public:
     void realizarOrden(string, int, string *, int *, string);
     void reduceCantidadProducto(string, int);
     void aumentaCantidadProducto(string, int);
+    string getNombre();
     Empleado getEmpleado(string);
     void agregarEmpleado(Empleado);
     void eliminarEmpleado(string);
 
-<<<<<<< HEAD
-class Sucursal {
-    public:
-        Sucursal();
-        Sucursal(int, int, int, Producto *, Empleado *, Cliente *);
-        Sucursal(int, int, int);
-        ~Sucursal();
-        Empleado *empleados;
-        Cliente *clientes;
-        string getNombre();
-        int getSizeEmpleados();
-
-    private:
-        string nombre;
-        int dimProductos;
-        int dimEmpleados;
-        int dimClientes;
-
-        Producto *productos;
-        
-=======
 private:
     // Atributos
     string nombre;
@@ -61,7 +41,6 @@ private:
     Empleado *empleados;
     int encuentraProducto(string);
     int encuentraEmpleado(string);
->>>>>>> f82a6181734dc2f481a8193bd3c37e32357c7778
 };
 
 #endif
