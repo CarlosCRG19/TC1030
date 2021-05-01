@@ -2,22 +2,25 @@
 
 Sucursal::Sucursal()
 {
+    nombre = "";
     numProductos = 1;
     numEmpleados = 1;
     empleados = new Empleado[1];
     inventario = new Producto[1];
 }
 
-Sucursal::Sucursal(int _dimProductos, int _dimEmpleados)
+Sucursal::Sucursal(string _nombre, int _dimProductos, int _dimEmpleados)
 {
+    nombre = _nombre;
     numProductos = _dimProductos;
     numEmpleados = _dimEmpleados;
     empleados = new Empleado[_dimEmpleados];
     inventario = new Producto[_dimProductos];
 }
 
-Sucursal::Sucursal(int _dimProductos, int _dimEmpleados, Producto *_productos, Empleado *_empleados)
+Sucursal::Sucursal(string _nombre, int _dimProductos, int _dimEmpleados, Producto *_productos, Empleado *_empleados)
 {
+    nombre = _nombre;
     numProductos = _dimProductos;
     numEmpleados = _dimEmpleados;
     empleados = _empleados;
@@ -38,6 +41,10 @@ void Sucursal::imprimirEmpleados()
         empleados[i].print();
     }
     cout << endl;
+}
+
+string Sucursal::getNombre() {
+    return nombre;
 }
 
 Empleado Sucursal::getEmpleado(string _nombre)
