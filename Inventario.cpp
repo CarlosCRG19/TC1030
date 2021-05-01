@@ -24,19 +24,20 @@ void Inventario::muestraProductos()
     cout << "------------------" << endl;
     for (int i = 0; i < numProductos; i++)
     {
-        cout << i << ".";
-        cout << productos[i].print() << endl;
+        cout << i+1 << ".";
+        productos[i].print();
+        cout<<endl;
     }
 }
 
 void Inventario::borrarProducto(int indice)
 {
-    if (indice < numProductos)
+    if (indice-1 < numProductos)
     {
-        numProductos = numProductos - 1;
-        for (int i = 0; i < numProductos; i++)
+        for (int i = indice-1; i < numProductos; i++)
         {
             productos[i] = productos[i + 1];
         }
+         numProductos = numProductos - 1;
     }
 }

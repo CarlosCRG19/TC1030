@@ -32,7 +32,6 @@ public:
     void modificarInfo(int, string);
     void cambioCantidad(int);
     // método para imprimir datos del producto actual
-    void print();
 };
 
 #endif
