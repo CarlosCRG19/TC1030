@@ -14,9 +14,11 @@ class Sucursal {
         ~Sucursal();
         Empleado *empleados;
         Cliente *clientes;
+        string getNombre();
         int getSizeEmpleados();
 
     private:
+        string nombre;
         int dimProductos;
         int dimEmpleados;
         int dimClientes;

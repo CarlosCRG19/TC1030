@@ -1,33 +1,30 @@
 #include "Sucursal.h"
 
-Sucursal::Sucursal() {
-    dimProductos = 1;
-    dimEmpleados = 1;
-    dimClientes = 1;
-    
-    clientes = new Cliente[1];
+Sucursal::Sucursal()
+{
+    nombre = "";
+    numProductos = 1;
+    numEmpleados = 1;
     empleados = new Empleado[1];
-    productos = new Producto[1];
+    inventario = new Producto[1];
 }
 
-Sucursal::Sucursal(int _dimProductos, int _dimEmpleados, int _dimCilentes) {
-    dimProductos = _dimProductos;
-    dimEmpleados = _dimEmpleados;
-    dimClientes = _dimCilentes;
-
-    clientes = new Cliente[_dimCilentes];
+Sucursal::Sucursal(string _nombre, int _dimProductos, int _dimEmpleados)
+{
+    nombre = _nombre;
+    numProductos = _dimProductos;
+    numEmpleados = _dimEmpleados;
     empleados = new Empleado[_dimEmpleados];
-    productos = new Producto[_dimProductos];
+    inventario = new Producto[_dimProductos];
 }
 
-Sucursal::Sucursal(int _dimProductos, int _dimEmpleados, int _dimCilentes, Producto *_productos, Empleado *_empleados, Cliente *_clientes) {
-    dimProductos = _dimProductos;
-    dimEmpleados = _dimEmpleados;
-    dimClientes = _dimCilentes;
-
-    clientes = _clientes;
+Sucursal::Sucursal(string _nombre, int _dimProductos, int _dimEmpleados, Producto *_productos, Empleado *_empleados)
+{
+    nombre = _nombre;
+    numProductos = _dimProductos;
+    numEmpleados = _dimEmpleados;
     empleados = _empleados;
-    productos = _productos;
+    inventario = _productos;
 }
 
 Sucursal::~Sucursal() {
@@ -35,4 +32,8 @@ Sucursal::~Sucursal() {
 
 int Sucursal::getSizeEmpleados(){
     return dimEmpleados;
+}
+
+string Sucursal::getNombre() {
+    return nombre;
 }
