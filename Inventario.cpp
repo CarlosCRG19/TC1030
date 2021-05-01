@@ -25,7 +25,8 @@ void Inventario::muestraProductos()
     for (int i = 0; i < numProductos; i++)
     {
         cout << i << ".";
-        cout << productos[i].print() << endl;
+        productos[i].print();
+        cout << endl;
     }
 }
 
@@ -38,5 +39,6 @@ void Inventario::borrarProducto(int indice)
         {
             productos[i] = productos[i + 1];
         }
+        numProductos = numProductos - 1;
     }
 }

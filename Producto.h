@@ -17,7 +17,6 @@ public:
     Producto();
     Producto(string, string, float, int, float, float);
     void inventario(int);
-    void print();
     // getters
     string getCodigo();
     string getNombre();

@@ -42,11 +42,6 @@ void Producto::muestraAtributos()
          << endl;
 }
 
-string Producto::getNombre()
-{
-    return nombre;
-}
-
 void Producto::modificarInfo(int atributo, string valor)
 {
     switch (atributo)
