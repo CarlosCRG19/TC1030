@@ -12,18 +12,20 @@ public:
     Sucursal(int, int, Producto *, Empleado *);
     Sucursal(int, int);
     ~Sucursal();
-    Empleado *empleados;
     int getSizeEmpleados();
-
-private:
-    // Atributos
-    int dimProductos;
-    int dimEmpleados;
-    Producto *productos;
-    // Métodos
+     // Métodos
     void imprimirEmpleados(); // imprime los nombres de los empleados
     int buscarEmpleado();     // regresa el índice donde se encuentra el empleado dentro del array
     void eliminarEmpleado();  // elimina empleado del array
+    void agregarProducto(Producto);
+    void eliminarProducto(int);
+    void muestraProductos();
+private:
+    // Atributos
+    int numProductos;
+    int numEmpleados;
+    Producto *inventario;
+    Empleado *empleados;
 };
 
 #endif

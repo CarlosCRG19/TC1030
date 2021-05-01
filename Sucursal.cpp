@@ -2,26 +2,26 @@
 
 Sucursal::Sucursal()
 {
-    dimProductos = 1;
-    dimEmpleados = 1;
+    numProductos = 1;
+    numEmpleados = 1;
     empleados = new Empleado[1];
-    productos = new Producto[1];
+    inventario = new Producto[1];
 }
 
 Sucursal::Sucursal(int _dimProductos, int _dimEmpleados)
 {
-    dimProductos = _dimProductos;
-    dimEmpleados = _dimEmpleados;
+    numProductos = _dimProductos;
+    numEmpleados = _dimEmpleados;
     empleados = new Empleado[_dimEmpleados];
-    productos = new Producto[_dimProductos];
+    inventario = new Producto[_dimProductos];
 }
 
 Sucursal::Sucursal(int _dimProductos, int _dimEmpleados, Producto *_productos, Empleado *_empleados)
 {
-    dimProductos = _dimProductos;
-    dimEmpleados = _dimEmpleados;
+    numProductos = _dimProductos;
+    numEmpleados = _dimEmpleados;
     empleados = _empleados;
-    productos = _productos;
+    inventario = _productos;
 }
 
 Sucursal::~Sucursal()
@@ -30,7 +30,42 @@ Sucursal::~Sucursal()
 
 int Sucursal::getSizeEmpleados()
 {
-    return dimEmpleados;
+    return numEmpleados;
 }
 
 // Métodos
+void Sucursal::agregarProducto(Producto nuevoProducto)
+{
+    Producto *inventarioAuxiliar = new Producto[numProductos + 1];
+    for (int i = 0; i < numProductos; i++)
+    {
+        inventarioAuxiliar[i] = inventario[i];
+    }
+    inventarioAuxiliar[numProductos] = nuevoProducto;
+    inventario = inventarioAuxiliar;
+    numProductos += 1;
+}
+
+void Sucursal::eliminarProducto(int indice)
+{
+    if (indice - 1 < numProductos)
+    {
+        for (int i = indice - 1; i < numProductos; i++)
+        {
+            inventario[i] = inventario[i + 1];
+        }
+        numProductos = numProductos - 1;
+    }
+}
+
+void Sucursal::muestraProductos()
+{
+    cout << "\nLista de Productos" << endl;
+    cout << "------------------" << endl;
+    for (int i = 0; i < numProductos; i++)
+    {
+        cout << i + 1 << ".";
+        inventario[i].print();
+    }
+    cout << endl;
+}

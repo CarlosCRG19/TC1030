@@ -16,7 +16,6 @@ public:
     Producto();
     Producto(string, string, float, int, float, float);
     void inventario(int);
-    void print();
     // getters
     string getCodigo();
     string getNombre();
@@ -31,6 +30,7 @@ public:
     void modificarInfo(int, string);
     void cambioCantidad(int);
     // método para imprimir datos del producto actual
+    void print();
 };
 
 #endif
