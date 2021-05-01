@@ -46,6 +46,10 @@ Empleado Sucursal::getEmpleado(string _nombre)
     return empleados[indice];
 }
 
+string Sucursal::getNombre() {
+    return nombre;
+}
+
 int Sucursal::getSizeEmpleados()
 {
     return numEmpleados;

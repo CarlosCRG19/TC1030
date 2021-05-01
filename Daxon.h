@@ -10,6 +10,7 @@ class Daxon{
         int numClientes;
         int numSucursales;
         int encuentraSucursal(string);
+        void muestraClientes();
     public:
         Daxon(Cliente *,int,Sucursal *, int);
         void transferirEmpleado(string, string, string);
