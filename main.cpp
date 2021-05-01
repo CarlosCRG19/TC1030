@@ -51,6 +51,8 @@ int main()
     casaRuiz.muestraProductos();
     casaRuiz.agregarProducto(x);
     casaRuiz.muestraProductos();
+    casaRuiz.eliminarProducto(1);
+    casaRuiz.muestraProductos();
     //Sucursal casaPerez(1, 2, 2, inventario, empleados, clientes);
     //casaRuiz.empleados[1].borrarEmpleado();
     //casaRuiz.empleados[0].print();

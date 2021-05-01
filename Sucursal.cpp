@@ -50,7 +50,7 @@ void Sucursal::eliminarProducto(int indice)
 {
     if (indice - 1 < numProductos)
     {
-        for (int i = indice - 1; i < numProductos; i++)
+        for (int i = indice - 1; i < numProductos-1; i++)
         {
             inventario[i] = inventario[i + 1];
         }
