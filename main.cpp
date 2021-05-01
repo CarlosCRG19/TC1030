@@ -53,7 +53,7 @@ int main()
     casaRuiz.muestraProductos();
     casaRuiz.eliminarProducto(20);
     casaRuiz.muestraProductos();
-    int arr[2] = {1, 2};
+    string arr[2] = {"A1", "A2"};
     int arr2[2] = {4, 4};
     casaRuiz.realizarOrden(1, 2, arr, arr2, "cuerpo");
     casaRuiz.muestraProductos();
