@@ -41,7 +41,10 @@ int main()
     Producto *inventario = crearInventario();
     Inventario mi_inventario(20, inventario);
     mi_inventario.muestraProductos();
-    mi_inventario.borrarProducto(2);
+    //mi_inventario.borrarProducto(2);
+    //mi_inventario.muestraProductos();
+    Producto x("asda","dildo",51.5,8,1564.5,156);
+    mi_inventario.agregarProducto(x);
     mi_inventario.muestraProductos();
     //Cliente cliente1("Luis David", "Const 5", "3411358179", "24/01/2002", 'M', "Lomlo");
     //Cliente cliente2("Brandon Josue", "Pipila 8", "341345446", "12/08/2002", 'M', "LMLM");
