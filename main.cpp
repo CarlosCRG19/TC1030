@@ -43,7 +43,7 @@ int main()
     Cliente cliente1("Luis David", "Const 5", "3411358179", "24/01/2002", 'M', "Lomlo");
     Cliente cliente2("Brandon Josue", "Pipila 8", "341345446", "12/08/2002", 'M', "LMLM");
     Cliente cliente3("Frida Khalo", "Saturno 3", "331794452", "25/02/1986", 'F', "AOKDOG");
-    Empleado empleado1("Luis David", "Const 5", "3411358179", "24/01/2002", 'M', "gerente");
+    Empleado empleado1("Luis David", "Const 5", "3411358179", "24/01/2002", 'M', "vendedor");
     Empleado empleado2("Brandon Josue", "Pipila 8", "341345446", "12/08/2002", 'M', "vendedor");
     Empleado empleados[2] = {empleado1, empleado2};
     //Cliente clientes[3] = {cliente1, cliente2, cliente3};
@@ -51,7 +51,11 @@ int main()
     casaRuiz.muestraProductos();
     casaRuiz.agregarProducto(x);
     casaRuiz.muestraProductos();
-    casaRuiz.eliminarProducto(1);
+    casaRuiz.eliminarProducto(20);
+    casaRuiz.muestraProductos();
+    int arr[2] = {1, 2};
+    int arr2[2] = {4, 4};
+    casaRuiz.realizarOrden(1, 2, arr, arr2, "cuerpo");
     casaRuiz.muestraProductos();
     //Sucursal casaPerez(1, 2, 2, inventario, empleados, clientes);
     //casaRuiz.empleados[1].borrarEmpleado();

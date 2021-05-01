@@ -29,6 +29,7 @@ public:
     void modificarInfo(int, float);
     void modificarInfo(int, string);
     void cambioCantidad(int);
+    void modificaCantidad(int);
     // método para imprimir datos del producto actual
     void print();
 };

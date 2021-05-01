@@ -19,6 +19,7 @@ public:
     void modificarInfo(int, char);
     // método print
     virtual void print();
+    string getRFC();
 };
 
 #endif

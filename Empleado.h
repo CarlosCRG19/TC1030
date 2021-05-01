@@ -16,6 +16,7 @@ public:
     virtual void print();
     void modificarInfo(int, string);
     void modificarInfo(int, char);
+    string getCargo();
 };
 
 #endif
