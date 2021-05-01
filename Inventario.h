@@ -11,6 +11,7 @@ public:
     Inventario(int, Producto *);
     void modificarProducto(int, int, string);
     void modificarProducto(int, int, float);
+
     void muestraProductos();
     void agregarProducto(Producto);
     void borrarProducto(int);

@@ -53,14 +53,3 @@ void Inventario::agregarProducto(Producto nuevoProducto)
     productos = inventarioAuxiliar;
     numProductos += 1;
 }
-// void Inventario::agregarProducto(Producto new_prod)
-// {
-//     Inventario aux(numProductos + 1);
-//     for (int i = 0; i < numProductos; i++)
-//     {
-//         aux.productos[i] = productos[i];
-//     }
-//     aux.productos[numProductos] = new_prod;
-//     productos = aux.productos;
-//     numProductos += 1;
-// }
