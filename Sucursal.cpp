@@ -99,10 +99,11 @@ void Sucursal::muestraAtributosProductos()
     inventario[0].muestraAtributos();
 }
 
-void Sucursal::realizarOrden(int _empleado, int _producto, int _cantidad, string _formaPago)
+void Sucursal::realizarOrden(int _empleado, string _producto, int _cantidad, string _formaPago)
 {
     Empleado empleado = empleados[_empleado - 1];
-    Producto producto = inventario[_producto - 1];
+    int indice = this->encuentraProducto(_producto);
+    Producto producto = inventario[indice];
     if (empleado.getCargo() == "Gerente" || empleado.getCargo() == "Vendedor" || empleado.getCargo() == "gerente" || empleado.getCargo() == "vendedor")
     {
         cout << _cantidad << " X " << producto.getNombre() << " - $" << producto.getPrecio() << endl;
@@ -118,7 +119,7 @@ void Sucursal::realizarOrden(int _empleado, int _producto, int _cantidad, string
     }
 }
 
-void Sucursal::realizarOrden(int _empleado, int _numProductos, int *_producto, int *_cantidad, string _formaPago)
+void Sucursal::realizarOrden(int _empleado, int _numProductos, string *_productos, int *_cantidad, string _formaPago)
 {
     Empleado empleado = empleados[_empleado - 1];
     if (empleado.getCargo() == "Gerente" || empleado.getCargo() == "Vendedor" || empleado.getCargo() == "gerente" || empleado.getCargo() == "vendedor")
@@ -126,11 +127,16 @@ void Sucursal::realizarOrden(int _empleado, int _numProductos, int *_producto, i
         int total = 0;
         for (int i = 0; i < _numProductos; i++)
         {
-            Producto producto = inventario[_producto[i] - 1];
+            int indice = this->encuentraProducto(_productos[i]);
+            Producto producto = inventario[indice];
             cout << _cantidad[i] << " X " << producto.getNombre() << " - $" << producto.getPrecio() << endl;
             total += _cantidad[i] * producto.getPrecio();
+<<<<<<< HEAD
             producto.modificaCantidad(_cantidad[i]);
             inventario[_producto[i] - 1]=producto;
+=======
+            this->reduceCantidadProducto(_productos[i], _cantidad[i]);
+>>>>>>> f86ef50061a61cd04f1f311f35dd886c7bd0170f
         }
         cout << endl;
         cout << "TOTAL: $" << total << endl;
@@ -144,9 +150,28 @@ void Sucursal::realizarOrden(int _empleado, int _numProductos, int *_producto, i
     }
 }
 
-void Sucursal::reduceCantidadProducto(int _producto, int cantidad)
+void Sucursal::reduceCantidadProducto(string id, int cantidad)
 {
-    Producto producto = inventario[_producto - 1];
-    int nuevaCantidad = producto.getCantidad() - cantidad;
-    producto.modificarInfo(4, nuevaCantidad);
+    int indice = this->encuentraProducto(id);
+    int nuevaCantidad = inventario[indice].getCantidad() - cantidad;
+    inventario[indice].modificarInfo(4, nuevaCantidad);
+}
+
+void Sucursal::aumentaCantidadProducto(string id, int cantidad)
+{
+    int indice = this->encuentraProducto(id);
+    int nuevaCantidad = inventario[indice].getCantidad() + cantidad;
+    inventario[indice].modificarInfo(4, nuevaCantidad);
+}
+
+int Sucursal::encuentraProducto(string id)
+{
+    for (int i = 0; i < numProductos; i++)
+    {
+        if (inventario[i].getCodigo() == id)
+        {
+            return i;
+        }
+    }
+    return -1;
 }
