@@ -5,24 +5,40 @@
 #include "Cliente.h"
 #include "Producto.h"
 
+class Sucursal
+{
+public:
+    Sucursal();
+    Sucursal(int, int, Producto *, Empleado *);
+    Sucursal(int, int);
+    ~Sucursal();
+    int getSizeEmpleados();
+    // Métodos
+    void imprimirEmpleados(); // imprime los nombres de los empleados
+    void eliminarEmpleado();  // elimina empleado del array
+    void agregarProducto(Producto);
+    void eliminarProducto(int);
+    void muestraProductos();
+    void modificarProducto(int, int, string);
+    void modificarProducto(int, int, float);
+    void muestraAtributosProductos();
+    void muestraAtributosEmpleado();
+    void realizarOrden(string, string, int, string);
+    void realizarOrden(string, int, string *, int *, string);
+    void reduceCantidadProducto(string, int);
+    void aumentaCantidadProducto(string, int);
+    Empleado getEmpleado(string);
+    void agregarEmpleado(Empleado);
+    void eliminarEmpleado(string);
 
-class Sucursal {
-    public:
-        Sucursal();
-        Sucursal(int, int, int, Producto *, Empleado *, Cliente *);
-        Sucursal(int, int, int);
-        ~Sucursal();
-        Empleado *empleados;
-        Cliente *clientes;
-        int getSizeEmpleados();
-
-    private:
-        int dimProductos;
-        int dimEmpleados;
-        int dimClientes;
-
-        Producto *productos;
-        
+private:
+    // Atributos
+    int numProductos;
+    int numEmpleados;
+    Producto *inventario;
+    Empleado *empleados;
+    int encuentraProducto(string);
+    int encuentraEmpleado(string);
 };
 
 #endif
