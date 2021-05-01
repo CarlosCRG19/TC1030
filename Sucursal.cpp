@@ -40,12 +40,43 @@ void Sucursal::imprimirEmpleados()
     cout << endl;
 }
 
+Empleado Sucursal::getEmpleado(string _nombre)
+{
+    int indice = this->encuentraEmpleado(_nombre);
+    return empleados[indice];
+}
+
 int Sucursal::getSizeEmpleados()
 {
     return numEmpleados;
 }
 
 // Métodos
+void Sucursal::agregarEmpleado(Empleado empleado)
+{
+    Empleado *empleadosAuxiliar = new Empleado[numEmpleados + 1];
+    for (int i = 0; i < numEmpleados; i++)
+    {
+        empleadosAuxiliar[i] = empleados[i];
+    }
+    empleadosAuxiliar[numEmpleados] = empleado;
+    empleados = empleadosAuxiliar;
+    numEmpleados += 1;
+}
+
+void Sucursal::eliminarEmpleado(string nombre)
+{
+    int indice = this->encuentraEmpleado(nombre);
+    if (indice < numEmpleados)
+    {
+        for (int i = indice; i < numEmpleados - 1; i++)
+        {
+            empleados[i] = empleados[i + 1];
+        }
+        numEmpleados = numEmpleados - 1;
+    }
+}
+
 void Sucursal::agregarProducto(Producto nuevoProducto)
 {
     Producto *inventarioAuxiliar = new Producto[numProductos + 1];
@@ -111,9 +142,10 @@ void Sucursal::muestraAtributosProductos()
     inventario[0].muestraAtributos();
 }
 
-void Sucursal::realizarOrden(int _empleado, string _producto, int _cantidad, string _formaPago)
+void Sucursal::realizarOrden(string _empleado, string _producto, int _cantidad, string _formaPago)
 {
-    Empleado empleado = empleados[_empleado - 1];
+    int indiceEmpleado = this->encuentraEmpleado(_empleado);
+    Empleado empleado = empleados[indiceEmpleado];
     int indice = this->encuentraProducto(_producto);
     Producto producto = inventario[indice];
     if (empleado.getCargo() == "Gerente" || empleado.getCargo() == "Vendedor" || empleado.getCargo() == "gerente" || empleado.getCargo() == "vendedor")
@@ -131,9 +163,10 @@ void Sucursal::realizarOrden(int _empleado, string _producto, int _cantidad, str
     }
 }
 
-void Sucursal::realizarOrden(int _empleado, int _numProductos, string *_productos, int *_cantidad, string _formaPago)
+void Sucursal::realizarOrden(string _empleado, int _numProductos, string *_productos, int *_cantidad, string _formaPago)
 {
-    Empleado empleado = empleados[_empleado - 1];
+    int indiceEmpleado = this->encuentraEmpleado(_empleado);
+    Empleado empleado = empleados[indiceEmpleado];
     if (empleado.getCargo() == "Gerente" || empleado.getCargo() == "Vendedor" || empleado.getCargo() == "gerente" || empleado.getCargo() == "vendedor")
     {
         int total = 0;
@@ -176,6 +209,18 @@ int Sucursal::encuentraProducto(string id)
     for (int i = 0; i < numProductos; i++)
     {
         if (inventario[i].getCodigo() == id)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int Sucursal::encuentraEmpleado(string nombre)
+{
+    for (int i = 0; i < numEmpleados; i++)
+    {
+        if (empleados[i].getNombre() == nombre)
         {
             return i;
         }

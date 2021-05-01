@@ -24,11 +24,13 @@ public:
     void modificarProducto(int, int, float);
     void muestraAtributosProductos();
     void muestraAtributosEmpleado();
-    void realizarOrden(int, string, int, string);
-    void realizarOrden(int, int, string *, int *, string);
+    void realizarOrden(string, string, int, string);
+    void realizarOrden(string, int, string *, int *, string);
     void reduceCantidadProducto(string, int);
     void aumentaCantidadProducto(string, int);
     Empleado getEmpleado(string);
+    void agregarEmpleado(Empleado);
+    void eliminarEmpleado(string);
 
 private:
     // Atributos
@@ -37,6 +39,7 @@ private:
     Producto *inventario;
     Empleado *empleados;
     int encuentraProducto(string);
+    int encuentraEmpleado(string);
 };
 
 #endif

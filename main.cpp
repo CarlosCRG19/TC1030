@@ -55,7 +55,7 @@ int main()
     casaRuiz.muestraProductos();
     string arr[2] = {"A1", "A2"};
     int arr2[2] = {4, 4};
-    casaRuiz.realizarOrden(1, 2, arr, arr2, "cuerpo");
+    casaRuiz.realizarOrden("Luis David", 2, arr, arr2, "cuerpo");
     casaRuiz.muestraProductos();
     //Sucursal casaPerez(1, 2, 2, inventario, empleados, clientes);
     //casaRuiz.empleados[1].borrarEmpleado();
