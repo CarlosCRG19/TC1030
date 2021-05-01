@@ -18,8 +18,13 @@ public:
     Producto(string, string, float, int, float, float);
     void inventario(int);
     void print();
+    // getters
     string getNombre();
-    void modificiarInfo(string, float);
+    // métodos para mostar atributos
+    void muestraAtributos();
+    // métodos para modificar información
+    void modificarInfo(int, float);
+    void modificarInfo(int, string);
     void cambioCantidad(int);
 };
 

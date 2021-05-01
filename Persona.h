@@ -16,7 +16,6 @@ protected:
 public:
     Persona();
     Persona(string, string, string, string, char);
-    virtual void print() = 0;
     // getters
     string getNombre() const;
     string getDireccion() const;
@@ -29,9 +28,11 @@ public:
     void setTelefono(string);
     void setFechaNac(string);
     void setSexo(char);
+    // método para mostrar atributos
+    virtual void muestraAtributos() = 0;
     // método para modificar atributos
-    void modificarInfo(string, string);
-    void modificarInfo(string, char);
+    void modificarInfo(int, string);
+    void modificarInfo(int, char);
 };
 
 #endif

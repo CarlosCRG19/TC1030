@@ -31,28 +31,3 @@ void Persona::setFechaNac(string _fechaNac) { fechaNac = _fechaNac; }
 void Persona::setSexo(char _sexo) { sexo = _sexo; }
 
 // Método para modificar atributos
-
-void Persona::modificarInfo(string atributo, string valor)
-{
-    if (atributo == "nombre")
-    {
-        nombre = valor;
-    }
-    else if (atributo == "direccion")
-    {
-        direccion = valor;
-    }
-    else if (atributo == "telefono")
-    {
-        telefono = telefono;
-    }
-    else if (atributo == "fechaNac")
-    {
-        fechaNac = valor;
-    }
-}
-
-void Persona::modificarInfo(string atributo, char valor)
-{
-    sexo = valor;
-}

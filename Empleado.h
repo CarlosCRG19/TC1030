@@ -12,8 +12,9 @@ private:
 public:
     Empleado();
     Empleado(string, string, string, string, char, string);
-    virtual void print();
-    void modificarInfo(string, string);
+    virtual void muestraAtributos();
+    void modificarInfo(int, string);
+    void modificarInfo(int, char);
 };
 
 #endif

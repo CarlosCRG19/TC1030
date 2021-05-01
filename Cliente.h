@@ -12,8 +12,11 @@ private:
 public:
     Cliente();
     Cliente(string, string, string, string, char, string);
-    virtual void print();
-    void modificarInfo(string, string);
+    // método para mostrar atributos
+    virtual void muestraAtributos();
+    // método para modificar atributos
+    void modificarInfo(int, string);
+    void modificarInfo(int, char);
 };
 
 #endif
