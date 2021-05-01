@@ -33,7 +33,6 @@ public:
 
 private:
     // Atributos
-    string nombre;
     int numProductos;
     int numEmpleados;
     Producto *inventario;

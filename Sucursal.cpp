@@ -2,7 +2,6 @@
 
 Sucursal::Sucursal()
 {
-    nombre = "";
     numProductos = 1;
     numEmpleados = 1;
     empleados = new Empleado[1];
@@ -11,7 +10,6 @@ Sucursal::Sucursal()
 
 Sucursal::Sucursal(int _dimProductos, int _dimEmpleados)
 {
-    nombre = "";
     numProductos = _dimProductos;
     numEmpleados = _dimEmpleados;
     empleados = new Empleado[_dimEmpleados];
@@ -20,7 +18,6 @@ Sucursal::Sucursal(int _dimProductos, int _dimEmpleados)
 
 Sucursal::Sucursal(int _dimProductos, int _dimEmpleados, Producto *_productos, Empleado *_empleados)
 {
-    nombre = "";
     numProductos = _dimProductos;
     numEmpleados = _dimEmpleados;
     empleados = _empleados;
