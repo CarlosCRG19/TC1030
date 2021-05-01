@@ -94,5 +94,8 @@ void Producto::print()
 
 void Producto::modificaCantidad(int _cantidadComprada)
 {
+    cout<<cantidad<<endl;
+    cout<<_cantidadComprada<<endl;
     cantidad = cantidad - _cantidadComprada;
+    cout<<cantidad;
 }

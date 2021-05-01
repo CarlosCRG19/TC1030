@@ -176,6 +176,8 @@ void Sucursal::realizarOrden(string _empleado, int _numProductos, string *_produ
             Producto producto = inventario[indice];
             cout << _cantidad[i] << " X " << producto.getNombre() << " - $" << producto.getPrecio() << endl;
             total += _cantidad[i] * producto.getPrecio();
+            producto.modificaCantidad(_cantidad[i]);
+            inventario[indice] = producto;
             this->reduceCantidadProducto(_productos[i], _cantidad[i]);
         }
         cout << endl;
