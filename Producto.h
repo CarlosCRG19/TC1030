@@ -5,7 +5,7 @@ using namespace std;
 
 class Producto
 {
-private:
+public:
     string codigo;
     string nombre;
     float precio;
@@ -13,7 +13,6 @@ private:
     float peso;
     float size;
 
-public:
     Producto();
     Producto(string, string, float, int, float, float);
     void inventario(int);

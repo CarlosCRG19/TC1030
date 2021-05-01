@@ -41,15 +41,14 @@ int main()
     Producto *inventario = crearInventario();
     Inventario mi_inventario(20, inventario);
     mi_inventario.muestraProductos();
-    Producto nuevoProducto("lol", "yo", 12, 21, 12, 22);
-    mi_inventario.agregarProducto(nuevoProducto);
-    mi_inventario.muestraProductos(); //
+    Producto x("asda", "lol", 121, 12, 12, 12);
+    mi_inventario.agregarProducto(x);
+    mi_inventario.muestraProductos();
     //Cliente cliente1("Luis David", "Const 5", "3411358179", "24/01/2002", 'M', "Lomlo");
     //Cliente cliente2("Brandon Josue", "Pipila 8", "341345446", "12/08/2002", 'M', "LMLM");
     //Cliente cliente3("Frida Khalo", "Saturno 3", "331794452", "25/02/1986", 'F', "AOKDOG");
     //Empleado empleado1("Luis David", "Const 5", "3411358179", "24/01/2002", 'M', "gerente");
     //Empleado empleado2("Brandon Josue", "Pipila 8", "341345446", "12/08/2002", 'M', "vendedor");
-    //Empleado empleado3("Santiago Gonzalez", "Santillana 6", "6641681053", "17/11/1997", 'M', "administrador");
     //Empleado empleados[3] = {empleado1, empleado2, empleado3};
     //Cliente clientes[3] = {cliente1, cliente2, cliente3};
     //Sucursal casaRuiz(1, 3, 3, inventario, empleados, clientes);
