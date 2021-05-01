@@ -28,6 +28,18 @@ Sucursal::~Sucursal()
 {
 }
 
+void Sucursal::imprimirEmpleados()
+{
+    cout << "\nLista de Empleados" << endl;
+    cout << "------------------" << endl;
+    for (int i = 0; i < numEmpleados; i++)
+    {
+        cout << i + 1 << ".";
+        empleados[i].print();
+    }
+    cout << endl;
+}
+
 int Sucursal::getSizeEmpleados()
 {
     return numEmpleados;

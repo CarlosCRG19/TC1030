@@ -28,6 +28,7 @@ public:
     void realizarOrden(int, int, string *, int *, string);
     void reduceCantidadProducto(string, int);
     void aumentaCantidadProducto(string, int);
+    Empleado getEmpleado(string);
 
 private:
     // Atributos
