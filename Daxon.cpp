@@ -126,3 +126,9 @@ void Daxon::agregaProducto(Producto nuevo_producto){
         sucursales[i].agregarProducto(nuevo_producto);
     }
 }
+
+void Daxon::agregaCantidadProductos(string _producto, float cantidad) {
+    for(int i = 0; i < numSucursales; i++) {
+        sucursales[i].aumentaCantidadProducto(_producto, cantidad);
+    }
+}

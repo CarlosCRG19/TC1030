@@ -87,8 +87,17 @@ int main()
     Producto prueba("A5","Chookis",45.0,0,0.06,1000);
     daxon.agregaProducto(prueba);
     daxon.muestraProductosSucursal("Perez");
-   
-   
+
+    //agregar cantidad de productos a todas las sucursales
+    
+    daxon.agregaCantidadProductos("A1", 7);
+    daxon.agregaCantidadProductos("A2", 7);
+    daxon.agregaCantidadProductos("A3", 7);
+    daxon.agregaCantidadProductos("A4", 7);
+    daxon.agregaCantidadProductos("A5", 7);
+
+    daxon.muestraProductosSucursal("Perez");
+
    
 
     /*Empleado empleados[2] = {empleado1, empleado2};

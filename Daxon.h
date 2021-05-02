@@ -27,5 +27,6 @@ public:
     void eliminarProductos(string);
     void muestraProductosSucursal(string _nombre);
     void agregaProducto(Producto);
+    void agregaCantidadProductos(string, float);
 };
 #endif

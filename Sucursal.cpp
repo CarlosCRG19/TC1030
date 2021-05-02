@@ -152,7 +152,8 @@ void Sucursal::modificarProducto(int producto, int atributo, float valor)
     }
     else
     {
-        inventario[producto - 1].modificarInfo(atributo, valor);
+        inventario[producto].print();
+        inventario[producto].modificarInfo(atributo, valor);
     }
 }
 
