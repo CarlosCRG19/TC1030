@@ -108,3 +108,27 @@ void Daxon::muestraEmpleados(string nombreSucursal)
     int indice = encuentraSucursal(nombreSucursal);
     sucursales[indice].imprimirEmpleados();
 }
+
+void Daxon::eliminarProductos(string _nombre){
+    for(int i=0; i<numSucursales;i++){
+        int indice=sucursales[i].encuentraProducto(_nombre);
+        sucursales[i].eliminarProducto(indice);
+    }
+}
+
+void Daxon::muestraProductosSucursal(string _nombre){
+    int indice=encuentraSucursal(_nombre);
+    sucursales[indice].muestraProductos();
+}
+
+void Daxon::agregaProducto(Producto nuevo_producto){
+    for(int i=0; i<numSucursales;i++){
+        sucursales[i].agregarProducto(nuevo_producto);
+    }
+}
+
+void Daxon::agregaCantidadProductos(string _producto, float cantidad) {
+    for(int i = 0; i < numSucursales; i++) {
+        sucursales[i].aumentaCantidadProducto(_producto, cantidad);
+    }
+}
