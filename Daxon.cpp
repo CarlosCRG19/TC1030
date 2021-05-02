@@ -18,5 +18,23 @@ int Daxon::encuentraSucursal(string _sucursal){
 }
 
 void Daxon::transferirEmpleado(string _nombreEmpleado, string _sucursalOrigen, string _sucursalDestino){
-    
+    int index_sucursalOrigen=encuentraSucursal(_sucursalOrigen);
+    int index_sucursalDestino=encuentraSucursal(_sucursalDestino);
+    Sucursal origen=sucursales[index_sucursalOrigen];
+    Sucursal destino=sucursales[index_sucursalDestino];
+    Empleado empleado=origen.getEmpleado(_nombreEmpleado);
+    destino.agregarEmpleado(empleado);
+    origen.eliminarEmpleado(_nombreEmpleado);
+}
+
+void Daxon::muestraClientes()
+{
+    cout << "\nLista de Clientes" << endl;
+    cout << "------------------" << endl;
+    for (int i = 0; i < numClientes; i++)
+    {
+        cout << i + 1 << ".";
+        clientes[i].print();
+    }
+    cout << endl;
 }

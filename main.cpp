@@ -1,6 +1,7 @@
 #include "Sucursal.h"
 #include "Cliente.h"
 #include "Empleado.h"
+#include "Daxon.h"
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -40,14 +41,20 @@ int main()
 {
     Producto *inventario = crearInventario();
     Producto x("asda", "lol", 121, 12, 12, 12);
-    Cliente cliente1("Luis David", "Const 5", "3411358179", "24/01/2002", 'M', "Lomlo");
-    Cliente cliente2("Brandon Josue", "Pipila 8", "341345446", "12/08/2002", 'M', "LMLM");
+    Cliente cliente1("Carlos", "Const 5", "3411358179", "24/01/2002", 'M', "Lomlo");
+    Cliente cliente2("Haziel", "Pipila 8", "341345446", "12/08/2002", 'M', "LMLM");
     Cliente cliente3("Frida Khalo", "Saturno 3", "331794452", "25/02/1986", 'F', "AOKDOG");
     Empleado empleado1("Luis David", "Const 5", "3411358179", "24/01/2002", 'M', "vendedor");
     Empleado empleado2("Brandon Josue", "Pipila 8", "341345446", "12/08/2002", 'M', "vendedor");
+    Empleado empleado3("Pedro", "Const 5", "3411358179", "24/01/2002", 'M', "vendedor");
+    Empleado empleado4("Jorge", "Pipila 8", "341345446", "12/08/2002", 'M', "vendedor");
+
+    Cliente clientes[2]={cliente1,cliente2};
+
     Empleado empleados[2] = {empleado1, empleado2};
+    Empleado empleados2[2]={empleado3,empleado4};
     //Cliente clientes[3] = {cliente1, cliente2, cliente3};
-    Sucursal casaRuiz(20, 2, inventario, empleados);
+    Sucursal casaRuiz("Ruiz",20, 2, inventario, empleados);
     casaRuiz.muestraProductos();
     casaRuiz.agregarProducto(x);
     casaRuiz.muestraProductos();
@@ -57,7 +64,12 @@ int main()
     int arr2[2] = {4, 4};
     casaRuiz.realizarOrden("Luis David", 2, arr, arr2, "cuerpo");
     casaRuiz.muestraProductos();
-    //Sucursal casaPerez(1, 2, 2, inventario, empleados, clientes);
+    Sucursal casaPerez("Perez",20, 2, inventario, empleados2);
+    Sucursal sucursales[2]={casaPerez,casaRuiz};
+    Daxon daxon(clientes,2,sucursales,2);
+    daxon.transferirEmpleado("Jorge","Perez","Ruiz");
+    casaRuiz.imprimirEmpleados();
+    casaPerez.imprimirEmpleados();
     //casaRuiz.empleados[1].borrarEmpleado();
     //casaRuiz.empleados[0].print();
     //casaRuiz.empleados[1].print();

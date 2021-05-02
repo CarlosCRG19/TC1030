@@ -2,6 +2,7 @@
 
 Sucursal::Sucursal()
 {
+    nombre=" ";
     numProductos = 1;
     numEmpleados = 1;
     empleados = new Empleado[1];
@@ -10,14 +11,16 @@ Sucursal::Sucursal()
 
 Sucursal::Sucursal(int _dimProductos, int _dimEmpleados)
 {
+    nombre=" ";
     numProductos = _dimProductos;
     numEmpleados = _dimEmpleados;
     empleados = new Empleado[_dimEmpleados];
     inventario = new Producto[_dimProductos];
 }
 
-Sucursal::Sucursal(int _dimProductos, int _dimEmpleados, Producto *_productos, Empleado *_empleados)
+Sucursal::Sucursal(string _nombre, int _dimProductos, int _dimEmpleados, Producto *_productos, Empleado *_empleados)
 {
+    nombre=_nombre;
     numProductos = _dimProductos;
     numEmpleados = _dimEmpleados;
     empleados = _empleados;
@@ -180,7 +183,8 @@ void Sucursal::realizarOrden(string _empleado, int _numProductos, string *_produ
             Producto producto = inventario[indice];
             cout << _cantidad[i] << " X " << producto.getNombre() << " - $" << producto.getPrecio() << endl;
             total += _cantidad[i] * producto.getPrecio();
-            producto.modificaCantidad(_cantidad[i]);
+            //producto.modificaCantidad(_cantidad[i]);
+            //cout<<producto.cantidad<<endl;
             inventario[indice] = producto;
             this->reduceCantidadProducto(_productos[i], _cantidad[i]);
         }

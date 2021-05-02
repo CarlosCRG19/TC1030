@@ -9,7 +9,7 @@ class Sucursal
 {
 public:
     Sucursal();
-    Sucursal(int, int, Producto *, Empleado *);
+    Sucursal(string, int, int, Producto *, Empleado *);
     Sucursal(int, int);
     ~Sucursal();
     int getSizeEmpleados();
@@ -31,15 +31,17 @@ public:
     Empleado getEmpleado(string);
     void agregarEmpleado(Empleado);
     void eliminarEmpleado(string);
+    int encuentraProducto(string);
+    int encuentraEmpleado(string);
 
 private:
     // Atributos
+    string nombre;
     int numProductos;
     int numEmpleados;
     Producto *inventario;
     Empleado *empleados;
-    int encuentraProducto(string);
-    int encuentraEmpleado(string);
+    
 };
 
 #endif
