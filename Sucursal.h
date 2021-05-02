@@ -33,6 +33,7 @@ public:
     void eliminarEmpleado(string);
     int encuentraProducto(string);
     int encuentraEmpleado(string);
+    void setNombre(string);
 
 private:
     // Atributos

@@ -24,5 +24,8 @@ public:
     void modificaCliente(string, int, char);
     void crearOrden(string, string, string, string, int, string);
     void crearOrden(string, string, string, int, string *, int *, string);
+    void eliminarProductos(string);
+    void muestraProductosSucursal(string _nombre);
+    void agregaProducto(Producto);
 };
 #endif

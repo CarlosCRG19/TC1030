@@ -61,15 +61,23 @@ int Sucursal::getSizeEmpleados()
 // Métodos
 void Sucursal::agregarEmpleado(Empleado empleado)
 {
-    Empleado *empleadosAuxiliar = new Empleado[numEmpleados + 1];
+    if(empleados[0].getNombre()=="NULL"){
+        empleados[0]=empleado;
+    }
+    else
+    {
+        Empleado *empleadosAuxiliar = new Empleado[numEmpleados + 1];
+
     for (int i = 0; i < numEmpleados; i++)
     {
         empleadosAuxiliar[i] = empleados[i];
     }
     empleadosAuxiliar[numEmpleados] = empleado;
     empleados = empleadosAuxiliar;
-    numEmpleados += 1;
+    numEmpleados += 1;  
+    } 
 }
+
 
 void Sucursal::eliminarEmpleado(string nombre)
 {
@@ -86,7 +94,10 @@ void Sucursal::eliminarEmpleado(string nombre)
 
 void Sucursal::agregarProducto(Producto nuevoProducto)
 {
-    Producto *inventarioAuxiliar = new Producto[numProductos + 1];
+    if(inventario[0].getNombre()==""){
+        inventario[0]=nuevoProducto;
+    }else{
+Producto *inventarioAuxiliar = new Producto[numProductos + 1];
     for (int i = 0; i < numProductos; i++)
     {
         inventarioAuxiliar[i] = inventario[i];
@@ -94,6 +105,7 @@ void Sucursal::agregarProducto(Producto nuevoProducto)
     inventarioAuxiliar[numProductos] = nuevoProducto;
     inventario = inventarioAuxiliar;
     numProductos += 1;
+    }
 }
 
 void Sucursal::eliminarProducto(int indice)
@@ -236,4 +248,8 @@ int Sucursal::encuentraEmpleado(string nombre)
         }
     }
     return -1;
+}
+
+void Sucursal::setNombre(string _nombre){
+    nombre=_nombre;
 }
