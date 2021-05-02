@@ -59,6 +59,25 @@ void Daxon::quitaClientes(string _cliente)
     }
 }
 
+void Daxon::agregarClientes(Cliente nuevoCliente)
+{
+    if (clientes[0].getNombre() == "NULL")
+    {
+        clientes[0] = nuevoCliente;
+    }
+    else
+    {
+        Cliente *clientesAuxiliar = new Cliente[numClientes + 1];
+        for (int i = 0; i < numClientes; i++)
+        {
+            clientesAuxiliar[i] = clientes[i];
+        }
+        clientesAuxiliar[numClientes] = nuevoCliente;
+        clientes = clientesAuxiliar;
+        numClientes += 1;
+    }
+}
+
 void Daxon::modificaCliente(string _cliente, int _atributo, string _mod)
 {
     int indice = encuentraCliente(_cliente);
@@ -109,26 +128,39 @@ void Daxon::muestraEmpleados(string nombreSucursal)
     sucursales[indice].imprimirEmpleados();
 }
 
-void Daxon::eliminarProductos(string _nombre){
-    for(int i=0; i<numSucursales;i++){
-        int indice=sucursales[i].encuentraProducto(_nombre);
+void Daxon::eliminarProductos(string _nombre)
+{
+    for (int i = 0; i < numSucursales; i++)
+    {
+        int indice = sucursales[i].encuentraProducto(_nombre);
         sucursales[i].eliminarProducto(indice);
     }
 }
 
-void Daxon::muestraProductosSucursal(string _nombre){
-    int indice=encuentraSucursal(_nombre);
+void Daxon::muestraProductosSucursal(string _nombre)
+{
+    int indice = encuentraSucursal(_nombre);
     sucursales[indice].muestraProductos();
 }
 
-void Daxon::agregaProducto(Producto nuevo_producto){
-    for(int i=0; i<numSucursales;i++){
+void Daxon::agregaProducto(Producto nuevo_producto)
+{
+    for (int i = 0; i < numSucursales; i++)
+    {
         sucursales[i].agregarProducto(nuevo_producto);
     }
 }
 
-void Daxon::agregaCantidadProductos(string _producto, float cantidad) {
-    for(int i = 0; i < numSucursales; i++) {
+void Daxon::agregaCantidadProductos(string _producto, float cantidad)
+{
+    for (int i = 0; i < numSucursales; i++)
+    {
         sucursales[i].aumentaCantidadProducto(_producto, cantidad);
     }
+}
+
+void Daxon::imprimeCliente(string cliente)
+{
+    int indice = encuentraCliente(cliente);
+    clientes[indice].print();
 }

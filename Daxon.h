@@ -28,5 +28,7 @@ public:
     void muestraProductosSucursal(string _nombre);
     void agregaProducto(Producto);
     void agregaCantidadProductos(string, float);
+    void agregarClientes(Cliente);
+    void imprimeCliente(string);
 };
 #endif

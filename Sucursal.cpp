@@ -2,7 +2,7 @@
 
 Sucursal::Sucursal()
 {
-    nombre=" ";
+    nombre = " ";
     numProductos = 1;
     numEmpleados = 1;
     empleados = new Empleado[1];
@@ -11,7 +11,7 @@ Sucursal::Sucursal()
 
 Sucursal::Sucursal(int _dimProductos, int _dimEmpleados)
 {
-    nombre=" ";
+    nombre = " ";
     numProductos = _dimProductos;
     numEmpleados = _dimEmpleados;
     empleados = new Empleado[_dimEmpleados];
@@ -20,7 +20,7 @@ Sucursal::Sucursal(int _dimProductos, int _dimEmpleados)
 
 Sucursal::Sucursal(string _nombre, int _dimProductos, int _dimEmpleados, Producto *_productos, Empleado *_empleados)
 {
-    nombre=_nombre;
+    nombre = _nombre;
     numProductos = _dimProductos;
     numEmpleados = _dimEmpleados;
     empleados = _empleados;
@@ -49,7 +49,8 @@ Empleado Sucursal::getEmpleado(string _nombre)
     return empleados[indice];
 }
 
-string Sucursal::getNombre() {
+string Sucursal::getNombre()
+{
     return nombre;
 }
 
@@ -61,23 +62,23 @@ int Sucursal::getSizeEmpleados()
 // Métodos
 void Sucursal::agregarEmpleado(Empleado empleado)
 {
-    if(empleados[0].getNombre()=="NULL"){
-        empleados[0]=empleado;
+    if (empleados[0].getNombre() == "NULL")
+    {
+        empleados[0] = empleado;
     }
     else
     {
         Empleado *empleadosAuxiliar = new Empleado[numEmpleados + 1];
 
-    for (int i = 0; i < numEmpleados; i++)
-    {
-        empleadosAuxiliar[i] = empleados[i];
+        for (int i = 0; i < numEmpleados; i++)
+        {
+            empleadosAuxiliar[i] = empleados[i];
+        }
+        empleadosAuxiliar[numEmpleados] = empleado;
+        empleados = empleadosAuxiliar;
+        numEmpleados += 1;
     }
-    empleadosAuxiliar[numEmpleados] = empleado;
-    empleados = empleadosAuxiliar;
-    numEmpleados += 1;  
-    } 
 }
-
 
 void Sucursal::eliminarEmpleado(string nombre)
 {
@@ -94,17 +95,20 @@ void Sucursal::eliminarEmpleado(string nombre)
 
 void Sucursal::agregarProducto(Producto nuevoProducto)
 {
-    if(inventario[0].getNombre()==""){
-        inventario[0]=nuevoProducto;
-    }else{
-Producto *inventarioAuxiliar = new Producto[numProductos + 1];
-    for (int i = 0; i < numProductos; i++)
+    if (inventario[0].getNombre() == "")
     {
-        inventarioAuxiliar[i] = inventario[i];
+        inventario[0] = nuevoProducto;
     }
-    inventarioAuxiliar[numProductos] = nuevoProducto;
-    inventario = inventarioAuxiliar;
-    numProductos += 1;
+    else
+    {
+        Producto *inventarioAuxiliar = new Producto[numProductos + 1];
+        for (int i = 0; i < numProductos; i++)
+        {
+            inventarioAuxiliar[i] = inventario[i];
+        }
+        inventarioAuxiliar[numProductos] = nuevoProducto;
+        inventario = inventarioAuxiliar;
+        numProductos += 1;
     }
 }
 
@@ -170,9 +174,9 @@ void Sucursal::realizarOrden(string _empleado, string _producto, int _cantidad, 
     Producto producto = inventario[indice];
     if (empleado.getCargo() == "Gerente" || empleado.getCargo() == "Vendedor" || empleado.getCargo() == "gerente" || empleado.getCargo() == "vendedor")
     {
-        cout << _cantidad << " X " << producto.getNombre() << " - $" << producto.getPrecio() << endl;
+        cout << _cantidad << " X " << inventario[indice].getNombre() << " - $" << producto.getPrecio() << endl;
         cout << endl;
-        cout << "TOTAL: $" << _cantidad * producto.getPrecio() << endl;
+        cout << "TOTAL: $" << _cantidad * inventario[indice].getPrecio() << endl;
         cout << "FORMA DE PAGO: " << _formaPago << endl;
         cout << "------------------------------------" << endl;
     }
@@ -251,6 +255,7 @@ int Sucursal::encuentraEmpleado(string nombre)
     return -1;
 }
 
-void Sucursal::setNombre(string _nombre){
-    nombre=_nombre;
+void Sucursal::setNombre(string _nombre)
+{
+    nombre = _nombre;
 }
