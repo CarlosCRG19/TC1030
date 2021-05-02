@@ -49,12 +49,12 @@ int main()
     Empleado empleado3("Pedro", "Const 5", "3411358179", "24/01/2002", 'M', "vendedor");
     Empleado empleado4("Jorge", "Pipila 8", "341345446", "12/08/2002", 'M', "vendedor");
 
-    Cliente clientes[2]={cliente1,cliente2};
+    Cliente clientes[2] = {cliente1, cliente2};
 
     Empleado empleados[2] = {empleado1, empleado2};
-    Empleado empleados2[2]={empleado3,empleado4};
+    Empleado empleados2[2] = {empleado3, empleado4};
     //Cliente clientes[3] = {cliente1, cliente2, cliente3};
-    Sucursal casaRuiz("Ruiz",20, 2, inventario, empleados);
+    Sucursal casaRuiz("Ruiz", 20, 2, inventario, empleados);
     //casaRuiz.muestraProductos();
     //casaRuiz.agregarProducto(x);
     //casaRuiz.muestraProductos();
@@ -64,14 +64,17 @@ int main()
     int arr2[2] = {4, 4};
     //casaRuiz.realizarOrden("Luis David", 2, arr, arr2, "cuerpo");
     //casaRuiz.muestraProductos();
-    Sucursal casaPerez("Perez",20, 2, inventario, empleados2);
-    Sucursal *ptrCasaPerez=&casaPerez;
-    Sucursal *ptrCasaRuiz=&casaRuiz;
-    Sucursal *sucursales[2] ={ptrCasaPerez,ptrCasaRuiz};
-    Daxon daxon(clientes,2,sucursales,2);
-    daxon.transferirEmpleado("Jorge", &casaPerez, &casaRuiz);
-    casaRuiz.imprimirEmpleados();
-    casaPerez.imprimirEmpleados();
+    Sucursal casaPerez("Perez", 20, 2, inventario, empleados2);
+    Sucursal sucursales[2] = {casaPerez, casaRuiz};
+    Daxon daxon(clientes, 2, sucursales, 2);
+    daxon.muestraEmpleados("Perez");
+    daxon.muestraEmpleados("Ruiz");
+    daxon.transferirEmpleado("Jorge", "Perez", "Ruiz");
+    daxon.muestraEmpleados("Perez");
+    daxon.muestraEmpleados("Ruiz");
+    // daxon.transferirEmpleado("Jorge", &casaPerez, &casaRuiz);
+    // casaRuiz.imprimirEmpleados();
+    // casaPerez.imprimirEmpleados();
 
     //daxon.crearOrden("Perez", "Panfilo", "Pedro", 2, arr, arr2, "Tarjeta");
     //casaPerez.muestraProductos();
@@ -79,8 +82,6 @@ int main()
     //daxon.modificaCliente("Haziel", 2, "Ramon corona");
     //daxon.quitaClientes("Carlos");
     //daxon.muestraClientes();
-
-    
 
     //casaRuiz.empleados[1].borrarEmpleado();
     //casaRuiz.empleados[0].print();

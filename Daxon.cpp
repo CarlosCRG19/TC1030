@@ -1,22 +1,25 @@
 #include "Daxon.h"
 
-Daxon::Daxon(Cliente *_clientes, int _numClientes, Sucursal *_sucursales[2], int _numSucursales){
-    clientes=_clientes;
-    sucursales=_sucursales;
-    numClientes=_numClientes;
-    numSucursales=_numSucursales;
+Daxon::Daxon(Cliente *_clientes, int _numClientes, Sucursal *_sucursales, int _numSucursales)
+{
+    clientes = _clientes;
+    sucursales = _sucursales;
+    numClientes = _numClientes;
+    numSucursales = _numSucursales;
 }
 
-int Daxon::encuentraSucursal(string _sucursal){
-    int index=-1;
-    for(int i=0; i<numSucursales; i++){
-        if(sucursales[i].getNombre()==_sucursal){
-            index=i;
+int Daxon::encuentraSucursal(string _sucursal)
+{
+    int index = -1;
+    for (int i = 0; i < numSucursales; i++)
+    {
+        if (sucursales[i].getNombre() == _sucursal)
+        {
+            index = i;
         }
     }
     return index;
 }
-
 
 void Daxon::muestraClientes()
 {
@@ -30,19 +33,24 @@ void Daxon::muestraClientes()
     cout << endl;
 }
 
-int Daxon::encuentraCliente(string _cliente) {
+int Daxon::encuentraCliente(string _cliente)
+{
     int index;
-    for(int i = 0; i < numClientes; i++) {
-        if (clientes[i].getNombre() == _cliente) {
+    for (int i = 0; i < numClientes; i++)
+    {
+        if (clientes[i].getNombre() == _cliente)
+        {
             index = i;
         }
     }
     return index;
 }
 
-void Daxon::quitaClientes(string _cliente) {
+void Daxon::quitaClientes(string _cliente)
+{
     int indice = encuentraCliente(_cliente);
-    if(indice < numClientes) {
+    if (indice < numClientes)
+    {
         for (int i = indice; i < numClientes - 1; i++)
         {
             clientes[i] = clientes[i + 1];
@@ -51,54 +59,52 @@ void Daxon::quitaClientes(string _cliente) {
     }
 }
 
-void Daxon::modificaCliente(string _cliente, int _atributo, string _mod) {
+void Daxon::modificaCliente(string _cliente, int _atributo, string _mod)
+{
     int indice = encuentraCliente(_cliente);
     clientes[indice].modificarInfo(_atributo, _mod);
 }
 
-
-void Daxon::modificaCliente(string _cliente, int _atributo, char _mod) {
+void Daxon::modificaCliente(string _cliente, int _atributo, char _mod)
+{
     int indice = encuentraCliente(_cliente);
     clientes[indice].modificarInfo(_atributo, _mod);
 }
 
+void Daxon::transferirEmpleado(string nombreEmpleado, string _sucursalOrigen, string _sucursalDestino)
+{
+    int indiceOrigen = encuentraSucursal(_sucursalOrigen);
+    int indiceDestino = encuentraSucursal(_sucursalDestino);
+    Empleado auxiliarEmpleado = sucursales[indiceOrigen].getEmpleado(nombreEmpleado);
 
-void Daxon::transferirEmpleado(string _nombreEmpleado, Sucursal *_sucursalOrigen, Sucursal *_sucursalDestino){
-
-    Sucursal *aux=new Sucursal[numSucursales];
-    
-    Sucursal origen = *_sucursalOrigen;
-    Sucursal destino = *_sucursalDestino;
-
-    Empleado empleado = origen.getEmpleado(_nombreEmpleado);
-    empleado.print();
-    destino.agregarEmpleado(empleado);
-    destino.imprimirEmpleados();
-
-    origen.eliminarEmpleado(_nombreEmpleado);
-    origen.imprimirEmpleados();
-
-    for (int i=0; i<numSucursales;i++){
-        if(sucursales[i].getNombre()!=origen.getNombre() && sucursales[i].getNombre()!=destino.getNombre()){
-            aux[i]=sucursales[i];
-        }else if(sucursales[i].getNombre()==origen.getNombre()){
-            aux[i]=origen;
-        }else{
-            aux[i]=destino;
-        }
-    }
-
-    sucursales=aux;
-
+    sucursales[indiceOrigen].eliminarEmpleado(nombreEmpleado);
+    sucursales[indiceDestino].agregarEmpleado(auxiliarEmpleado);
 }
 
-
-void Daxon::crearOrden(string _sucursal, string _cliente, string _empleado, string _producto, int _cantidad, string _formaPago) {
-    int index_sucursal=encuentraSucursal(_sucursal);
+void Daxon::crearOrden(string _sucursal, string _cliente, string _empleado, string _producto, int _cantidad, string _formaPago)
+{
+    int index_sucursal = encuentraSucursal(_sucursal);
     sucursales[index_sucursal].realizarOrden(_empleado, _producto, _cantidad, _formaPago);
 }
 
-void Daxon::crearOrden(string _sucursal, string _cliente, string _empleado, int _numProductos, string *_producto, int *_cantidad, string _formaPago) {
-    int index_sucursal=encuentraSucursal(_sucursal);
+void Daxon::crearOrden(string _sucursal, string _cliente, string _empleado, int _numProductos, string *_producto, int *_cantidad, string _formaPago)
+{
+    int index_sucursal = encuentraSucursal(_sucursal);
     sucursales[index_sucursal].realizarOrden(_empleado, _numProductos, _producto, _cantidad, _formaPago);
+}
+
+void Daxon::muestraSucursales()
+{
+    cout << "\nLista de Sucursales" << endl;
+    cout << "------------------" << endl;
+    for (int i = 0; i < numSucursales; i++)
+    {
+        cout << i + 1 << ". " << sucursales[i].getNombre() << endl;
+    }
+    cout << endl;
+}
+void Daxon::muestraEmpleados(string nombreSucursal)
+{
+    int indice = encuentraSucursal(nombreSucursal);
+    sucursales[indice].imprimirEmpleados();
 }
