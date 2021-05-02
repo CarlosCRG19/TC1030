@@ -41,7 +41,6 @@ private:
     int numEmpleados;
     Producto *inventario;
     Empleado *empleados;
-    
 };
 
 #endif
