@@ -55,21 +55,33 @@ int main()
     Empleado empleados2[2]={empleado3,empleado4};
     //Cliente clientes[3] = {cliente1, cliente2, cliente3};
     Sucursal casaRuiz("Ruiz",20, 2, inventario, empleados);
-    casaRuiz.muestraProductos();
-    casaRuiz.agregarProducto(x);
-    casaRuiz.muestraProductos();
-    casaRuiz.eliminarProducto(20);
-    casaRuiz.muestraProductos();
+    //casaRuiz.muestraProductos();
+    //casaRuiz.agregarProducto(x);
+    //casaRuiz.muestraProductos();
+    //casaRuiz.eliminarProducto(20);
+    //casaRuiz.muestraProductos();
     string arr[2] = {"A1", "A2"};
     int arr2[2] = {4, 4};
-    casaRuiz.realizarOrden("Luis David", 2, arr, arr2, "cuerpo");
-    casaRuiz.muestraProductos();
+    //casaRuiz.realizarOrden("Luis David", 2, arr, arr2, "cuerpo");
+    //casaRuiz.muestraProductos();
     Sucursal casaPerez("Perez",20, 2, inventario, empleados2);
-    Sucursal sucursales[2]={casaPerez,casaRuiz};
+    Sucursal *ptrCasaPerez=&casaPerez;
+    Sucursal *ptrCasaRuiz=&casaRuiz;
+    Sucursal *sucursales[2] ={ptrCasaPerez,ptrCasaRuiz};
     Daxon daxon(clientes,2,sucursales,2);
-    daxon.transferirEmpleado("Jorge","Perez","Ruiz");
+    daxon.transferirEmpleado("Jorge", &casaPerez, &casaRuiz);
     casaRuiz.imprimirEmpleados();
     casaPerez.imprimirEmpleados();
+
+    //daxon.crearOrden("Perez", "Panfilo", "Pedro", 2, arr, arr2, "Tarjeta");
+    //casaPerez.muestraProductos();
+
+    //daxon.modificaCliente("Haziel", 2, "Ramon corona");
+    //daxon.quitaClientes("Carlos");
+    //daxon.muestraClientes();
+
+    
+
     //casaRuiz.empleados[1].borrarEmpleado();
     //casaRuiz.empleados[0].print();
     //casaRuiz.empleados[1].print();
